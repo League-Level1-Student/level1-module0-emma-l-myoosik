@@ -21,6 +21,7 @@ import javax.swing.JPanel;
 public class DrumKit implements MouseListener {
 
 	JLabel drumLabelWithImage;
+	JLabel cymbalLabelWithImage;
 
 	public void run() throws MalformedURLException {
 
@@ -29,6 +30,7 @@ public class DrumKit implements MouseListener {
 		// 2. Make the frame visible and
 		// set its default close operation to JFrame.EXIT_ON_CLOSE
 		frame.setVisible(true);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		// 3. Set the size of the frame
 		frame.setSize(600, 400);
 		// 4. Set the title of the frame
@@ -41,10 +43,9 @@ public class DrumKit implements MouseListener {
 		// Eclipse project under "default package".
 
 		// 8. Put the name of your image file in a String variable.
-		String drumImage = "drums.jpg";
+		String drumImage = "snare.jpg";
 		// 9. Edit the next line to use your String variable
 		drumLabelWithImage = createLabelImage(drumImage);
-
 		// 10. Add the image to the panel
 		panel.add(drumLabelWithImage);
 		// 11. Set the layout of the panel to "new GridLayout()"
@@ -53,28 +54,39 @@ public class DrumKit implements MouseListener {
 		// your drum image?
 		frame.pack();
 		// 13. add this mouse listener to drumLabelWithImage
-
+		drumLabelWithImage.addMouseListener(this);
 		// 18. Add more images to make a drumkit. Remember to add this mouse
 		// listener to each one.
-
+		String cymbalImage = "cymbal.jpg";
+		cymbalLabelWithImage = createLabelImage(cymbalImage);
+		panel.add(cymbalLabelWithImage);
+		panel.setLayout(new GridLayout());
+		frame.pack();
+		cymbalLabelWithImage.addMouseListener(this);
+		
 	}
 
 	public void mouseClicked(MouseEvent e) {
 		// 14. Print "mouse clicked" to the console. Run your program and watch
 		// the console to see when this is printed.
+		System.out.println("mouse clicked");
 
 		JLabel drumClicked = (JLabel) e.getSource(); // This line gets the label
 														// that the mouse
 														// clicked on
-
+		JLabel cymbalClicked = (JLabel) e.getSource();
 		// 15. Download a drum sound and drop it into your "default package".
 		// You can find it on freesound.org. To download it, log in as
 		// leagueofamazing/code4life.
 
 		// 16. If they clicked on the drumImage...
-
+		if (drumClicked == drumLabelWithImage) {
 		// 17. ...use the playSound method to play a drum sound. Test to see if
 		// it works
+			playSound("drum.wav");
+		} else if (cymbalClicked == cymbalLabelWithImage) {
+			playSound("cymbal.wav");
+		}
 
 	}
 
