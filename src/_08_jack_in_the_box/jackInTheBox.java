@@ -12,6 +12,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
+@SuppressWarnings("deprecation")
 public class jackInTheBox implements ActionListener {
 	int counter = 0;
 	public void showButton() {

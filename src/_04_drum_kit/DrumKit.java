@@ -18,6 +18,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+@SuppressWarnings("deprecation")
 public class DrumKit implements MouseListener {
 
 	JLabel drumLabelWithImage;
