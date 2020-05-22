@@ -14,13 +14,6 @@ void setup(){
 }
 
 void draw(){
-  image(pictureOfRecord, 0, 0);
-  int x = 0;
-  while (x <= 360) {
-    x++;
-    rotateImage(pictureOfRecord, x);
-    image(pictureOfRecord, 0, 0);
-  }
   if (mousePressed) {
     rotateImage(pictureOfRecord, angle);
     image(pictureOfRecord, 0, 0);

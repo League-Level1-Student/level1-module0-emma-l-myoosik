@@ -9,6 +9,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
+@SuppressWarnings("deprecation")
 public class soundEffectsMachine implements ActionListener {
 	JButton button1 = new JButton();
 	JButton button2 = new JButton();
